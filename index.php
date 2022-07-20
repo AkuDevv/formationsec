@@ -59,19 +59,19 @@
 
       <div class="w-25 h-25">
         <!-- Uncomment below if you prefer to use an image logo -->
-        <a href="index.html"><img src="assets/img/logo_.png" alt="Ibtikarcom" class="img-fluid"></a>
+        <a href="https://ibtikarcom.com/"><img src="assets/img/logo_.png" alt="Ibtikarcom" class="img-fluid"></a>
       </div>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Accueil</a></li>
           <li><a class="nav-link scrollto" href="#about">Qui somme nous</a></li>
-          <li><a class="nav-link scrollto" href="#services">Pourquoi nous</a></li>
+          <li><a class="nav-link scrollto" href="#why-us">Pourquoi nous</a></li>
           <li><a class="nav-link scrollto" href="#team">Nos formations</a></li>
           <li class="dropdown"><a href="#"><span>Ibtikarcom</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
-              <li><a href="#">Notre site</a></li>
-              <li><a href="#">Evenements</a></li>
+              <li><a href="https://ibtikarcom.com/">Notre site</a></li>
+              <li><a href="https://event.ibtikarcom.com/">Evenements</a></li>
               <li><a href="#">Entreprenariat</a></li>
             </ul>
           </li>
@@ -93,7 +93,7 @@
         <div class="carousel-inner" role="listbox">
 
           <!-- Slide 1 -->
-          <div class="carousel-item active" style="background-image: url(assets/img/slide/slide-1.jpg);">
+          <div class="carousel-item active" style="background-image: url(assets/img/formation2.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Formations d'<span>Ibtikarcom</span></h2>
@@ -104,22 +104,33 @@
           </div>
 
           <!-- Slide 2 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-2.jpg);">
+          <div class="carousel-item" style="background-image: url(assets/img/formation1.jpg);">
             <div class="carousel-container">
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Formations d'<span>Ibtikarcom</span></h2>
-                <p class="animate__animated animate__fadeInUp">Le mois de décembre laisse place à d’une nouvelle offre promotionnelle . Pour vous remercier de votre fidélité et de votre confiance, nous vous offrons une nouvelle offre professionnelle du mois de décembre : des formations professionnelles en infographie, montage et création d’entreprise seulement à 950 Dh/mois pour ( 3h/semaine durant 3 mois). Inscrivez-vous vite (les places sont limitées) cliquez sur réservez maintenant et remplissez le formulaire d’inscription.</p>
-                <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Explorer</a>
-              </div>
-            </div>
-          </div>
+                <p class="animate__animated animate__fadeInUp">
+                  <?php
+                  $host = 'localhost';
+                  $username = 'root';
+                  $password = '';
+                  $dbname = 'formationsite';
 
-          <!-- Slide 3 -->
-          <div class="carousel-item" style="background-image: url(assets/img/slide/slide-3.jpg);">
-            <div class="carousel-container">
-              <div class="carousel-content">
-                <h2 class="animate__animated animate__fadeInDown">Formations d'<span>Ibtikarcom</span></h2>
-                <p class="animate__animated animate__adeInUp">Nous offrons les meilleurs formations en nouvelles technologies</p>
+                  $connection = mysqli_connect($host, $username, $password, $dbname);
+                  if ($connection == false) {
+                    die('Erreur de connexion!');
+                  } else {
+                    $select = "SELECT * from Offres";
+                    $result = mysqli_query($connection, $select);
+                    if (mysqli_num_rows($result) > 0) {
+                      while ($row = mysqli_fetch_array($result)) {
+                        echo "$row[1]";
+                      }
+                    } else {
+                      echo "<p>Erreur!</p>";
+                    }
+                  }
+                  ?>
+                </p>
                 <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Explorer</a>
               </div>
             </div>
@@ -152,7 +163,7 @@
           </div>
           <div class="col-lg-6 pt-4 pt-lg-0">
             <p>
-              Ibtikarcom spécialisée en communication digitale et production audiovisuelle en innovation est au service de la performance digitale de ses clients et les accompagne de la réflexion au déploiement et à promouvoir : 
+              Ibtikarcom spécialisée en communication digitale et production audiovisuelle en innovation est au service de la performance digitale de ses clients et les accompagne de la réflexion au déploiement et à promouvoir :
             </p>
             <ul>
               <li><i class="ri-check-double-line"></i> Leur image</li>
@@ -190,7 +201,7 @@
 
       </div>
     </section>
-    
+
     <section id="why-us" class="why-us">
       <div class="container">
 
@@ -206,7 +217,7 @@
             <div class="box" data-aos="fade-up">
               <span>01</span>
               <h4>Multiples Choix</h4>
-              <p>Ulamco laboris nisi ut aliquip ex ea commodo consequat. Et consectetur ducimus vero placeat</p>
+              <p>Nous offrons des choix différents pour satisfaire vos besoins</p>
             </div>
           </div>
 
@@ -214,7 +225,7 @@
             <div class="box" data-aos="fade-up" data-aos-delay="100">
               <span>02</span>
               <h4>Formateurs Experts</h4>
-              <p>Dolorem est fugiat occaecati voluptate velit esse. Dicta veritatis dolor quod et vel dire leno para dest</p>
+              <p>Des formateurs haut niveau vous accompagnent du A à Z</p>
             </div>
           </div>
 
@@ -222,7 +233,7 @@
             <div class="box">
               <span>03</span>
               <h4> Technologies Moderns</h4>
-              <p>Molestiae officiis omnis illo asperiores. Aut doloribus vitae sunt debitis quo vel nam quis</p>
+              <p>Des nouvelles technologies pour vous bien intégrer au monde professionnelle</p>
             </div>
           </div>
 
@@ -275,69 +286,120 @@
       <div class="container">
 
         <div class="section-title" data-aos="zoom-in">
-          <h2 class="mt-4">formations</h2>
+          <h2 class="mt-4">formations en cours</h2>
           <h3> <span> Nos</span></h3>
           <p>Voici une liste des formations que nous offrons</p>
         </div>
 
         <div class="row d-flex justify-content-center">
 
-          <div class="col-lg-4 col-md-3 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="" title="Explorer"><i class="bi bi-plus-circle-fill"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h3>Infographie</h3>
-                <span>
-                  Que ce soit pour des besoins professionnels ou par simple envie, notre formation d’initiation en infographie assurée par Ibtikarcom vous permet de franchir une barrière créative. Vous êtes moins limité dans votre processus de création et pouvez, à votre guise, retoucher des images, créer des illustrations ou réaliser des mises en page graphiques et complexes. N’éditez pas à rejoindre notre équipe afin de satisfaire votre besoin. Les étudiants et étudiantes seront accompagnés tout au long de cette formation par un corps enseignant de haut niveau ayant une grande expertise et expérience dans le domaine du Design graphique, afin de leur fournir les connaissances nécessaires pour devenir des infographistes capables de réaliser, à l’aide d’outils informatiques, l’ ensemble des tâches relatives à la création de supports visuels.
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-3 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="" title="Explorer"><i class="bi bi-plus-circle-fill"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h3>Infographie</h3>
-                <span>
-                  Que ce soit pour des besoins professionnels ou par simple envie, notre formation d’initiation en infographie assurée par Ibtikarcom vous permet de franchir une barrière créative. Vous êtes moins limité dans votre processus de création et pouvez, à votre guise, retoucher des images, créer des illustrations ou réaliser des mises en page graphiques et complexes. N’éditez pas à rejoindre notre équipe afin de satisfaire votre besoin. Les étudiants et étudiantes seront accompagnés tout au long de cette formation par un corps enseignant de haut niveau ayant une grande expertise et expérience dans le domaine du Design graphique, afin de leur fournir les connaissances nécessaires pour devenir des infographistes capables de réaliser, à l’aide d’outils informatiques, l’ ensemble des tâches relatives à la création de supports visuels.
-                </span>
-              </div>
-            </div>
-          </div>
-          <div class="col-lg-4 col-md-3 d-flex align-items-stretch">
-            <div class="member" data-aos="fade-up">
-              <div class="member-img">
-                <img src="assets/img/team/team-1.jpg" class="img-fluid" alt="">
-                <div class="social">
-                  <a href="" title="Explorer"><i class="bi bi-plus-circle-fill"></i></a>
-                </div>
-              </div>
-              <div class="member-info">
-                <h3>Infographie</h3>
-                <span>
-                  Que ce soit pour des besoins professionnels ou par simple envie, notre formation d’initiation en infographie assurée par Ibtikarcom vous permet de franchir une barrière créative. Vous êtes moins limité dans votre processus de création et pouvez, à votre guise, retoucher des images, créer des illustrations ou réaliser des mises en page graphiques et complexes. N’éditez pas à rejoindre notre équipe afin de satisfaire votre besoin. Les étudiants et étudiantes seront accompagnés tout au long de cette formation par un corps enseignant de haut niveau ayant une grande expertise et expérience dans le domaine du Design graphique, afin de leur fournir les connaissances nécessaires pour devenir des infographistes capables de réaliser, à l’aide d’outils informatiques, l’ ensemble des tâches relatives à la création de supports visuels.
-                </span>
-              </div>
-            </div>
-          </div>
+          <?php
+          $host = 'localhost';
+          $username = 'root';
+          $password = '';
+          $dbname = 'formationsite';
 
+          $connection = mysqli_connect($host, $username, $password, $dbname);
+          if ($connection == false) {
+            die('Erreur de connection!');
+          } else {
+            $select = "SELECT * from formations where encours=1";
+            $result = mysqli_query($connection, $select);
+            if (mysqli_num_rows($result) > 0) {
+              $a = 0;
+              $_SESSION['count'] = $a;
+              while ($row = mysqli_fetch_array($result)) {
+                $a++;
+                echo "
+                <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='" . $row[2] . "' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.php?form_id=".$row[0]."' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>" . $row[1] . "</h3>
+                <span>
+                  " . substr($row[4], 0, 300) . "..." . "
+                </span>
+              </div>
+            </div>
+          </div>
+                ";
+              }
+            } else {
+              echo "Pas de données!";
+            }
+          }
+          mysqli_close($connection);
+          ?>
+        </div>
+
+      </div>
+    </section>
+    <!-- End Team Section -->
+    <section id="team" class="team">
+      <div class="container">
+
+        <div class="section-title" data-aos="zoom-in">
+          <h2 class="mt-4">formations terminées</h2>
+          <h3> <span> Nos</span></h3>
+          <p>Voici une liste des formations passées</p>
+        </div>
+
+        <div class="row d-flex justify-content-center">
+
+          <?php
+          $host = 'localhost';
+          $username = 'root';
+          $password = '';
+          $dbname = 'formationsite';
+
+          $connection = mysqli_connect($host, $username, $password, $dbname);
+          if ($connection == false) {
+            die('Erreur de connection!');
+          } else {
+            $select = "SELECT * from formations where encours=0";
+            $result = mysqli_query($connection, $select);
+            if (mysqli_num_rows($result) > 0) {
+              $a = 0;
+              $_SESSION['count'] = $a;
+              while ($row = mysqli_fetch_array($result)) {
+                $a++;
+                echo "
+                <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='" . $row[2] . "' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.php?form_id=".$row[0]."' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>" . $row[1] . "</h3>
+                <span>
+                  " . substr($row[4], 0, 300) . "..." . "
+                </span>
+              </div>
+            </div>
+          </div>
+                ";
+              }
+            } else {
+              echo "Pas de données!";
+            }
+          }
+          mysqli_close($connection);
+          ?>
         </div>
 
       </div>
     </section><!-- End Team Section -->
 
     <!-- ======= Testimonials Section ======= -->
-    
+
     <!-- ======= Contact Section ======= -->
     <section id="contact" class="contact">
       <div class="container">

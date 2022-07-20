@@ -23,7 +23,7 @@ a:hover {
   text-decoration: none;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6, legend {
   font-family: "Raleway", sans-serif;
 }
 
@@ -138,8 +138,12 @@ h3 {
   line-height: 0;
 }
 .team .member .member-info {
-  padding: 25px 15px;
+  padding: 25px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
 }
+
 .team .member .member-info h3 {
   font-weight: 700;
   margin-bottom: 5px;
@@ -497,9 +501,15 @@ h3 {
   text-align: center;
 }
 #hero h2 {
-  color: #fff;
+  color: rgb(255, 255, 255);
   margin-bottom: 30px;
-  font-size: 48px;
+  font-size: 70px;
+  font-weight: 700;
+}
+#hero h2 span {
+  color: #049cde;
+  margin-bottom: 30px;
+  font-size: 70px;
   font-weight: 700;
 }
 #hero p {
@@ -920,11 +930,19 @@ section {
   box-shadow: 0px 0 30px rgba(53, 65, 68, 0.08);
 }
 .portfolio-details .portfolio-info h3 {
-  font-size: 22px;
+  font-size: 35px;
   font-weight: 700;
   margin-bottom: 20px;
   padding-bottom: 20px;
   border-bottom: 1px solid #eee;
+}
+
+.portfolio-details .portfolio-info h3 span{
+  font-size: 35px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  padding-bottom: 20px;
+  color: #049cde;
 }
 .portfolio-details .portfolio-info ul {
   list-style: none;
@@ -935,18 +953,32 @@ section {
   margin-top: 10px;
 }
 .portfolio-details .portfolio-description {
-  padding-top: 30px;
+  padding-top: 10px;
 }
 .portfolio-details .portfolio-description h2 {
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
+  color: #049cde;
 }
 .portfolio-details .portfolio-description p {
   padding: 0;
 }
 
-/*--------------------------------------------------------------
+.formulaire input{
+  background-color: lightgray;
+}
+.formulaire legend{
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #049cde;
+}
+.formulaire button{
+  color: #fafeff;
+}
+
+/*-------rgb(255, 255, 255)------------------------------------------------
 # Team
 --------------------------------------------------------------*/
 .team {
@@ -969,9 +1001,7 @@ section {
 .team .member:hover img {
   transform: scale(1.1);
 }
-.team .member .member-info {
-  padding-left: 30px;
-}
+
 .team .member h4 {
   font-weight: 700;
   margin-bottom: 5px;
