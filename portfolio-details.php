@@ -199,6 +199,9 @@ if ($connection == false) {
                 </div>
               </form></div>";
             }
+            else{
+              echo "<div class='d-flex justify-content-center'>Inscription Terminée!</div>";
+            }
 
             $host = 'localhost';
             $username = 'root';

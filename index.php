@@ -68,6 +68,7 @@
           <li><a class="nav-link scrollto" href="#about">Qui somme nous</a></li>
           <li><a class="nav-link scrollto" href="#why-us">Pourquoi nous</a></li>
           <li><a class="nav-link scrollto" href="#team">Nos formations</a></li>
+          <li><a class="nav-link scrollto" href="#portfolio">Galerie</a></li>
           <li class="dropdown"><a href="#"><span>Ibtikarcom</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
               <li><a href="https://ibtikarcom.com/">Notre site</a></li>
@@ -316,7 +317,7 @@
               <div class='member-img'>
                 <img src='" . $row[2] . "' class='img-fluid' alt=''>
                 <div class='social'>
-                  <a href='portfolio-details.php?form_id=".$row[0]."' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                  <a href='portfolio-details.php?form_id=" . $row[0] . "' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
                 </div>
               </div>
               <div class='member-info'>
@@ -374,7 +375,7 @@
               <div class='member-img'>
                 <img src='" . $row[2] . "' class='img-fluid' alt=''>
                 <div class='social'>
-                  <a href='portfolio-details.php?form_id=".$row[0]."' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                  <a href='portfolio-details.php?form_id=" . $row[0] . "' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
                 </div>
               </div>
               <div class='member-info'>
@@ -396,6 +397,52 @@
         </div>
 
       </div>
+    </section>
+    <section id="portfolio" class="portfolio">
+      <div class="container">
+
+        <div class="section-title">
+          <span>Galerie</span>
+          <h3><span>Galerie</span></h3>
+          <p class="mt-5">Photos de nos formations passées</p>
+        </div>
+
+        <div class="row portfolio-container">
+
+          <?php
+          $host = 'localhost';
+          $username = 'root';
+          $password = '';
+          $dbname = 'formationsite';
+
+          $connection = mysqli_connect($host, $username, $password, $dbname);
+          if ($connection == false) {
+            die('Erreur de connection!');
+          } else {
+            $select = "SELECT * from photos join formations on photos.id_formation = formations.id_formation";
+            $result = mysqli_query($connection, $select);
+            if (mysqli_num_rows($result) > 0) {
+              while ($row = mysqli_fetch_array($result)) {
+                echo "
+                  <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/" . $row[1] . "' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: " . $row[4] . "</h4>
+              </div>
+            </div>
+          </div>
+                  ";
+              }
+            } else {
+              echo "Pas de données!";
+            }
+          }
+          mysqli_close($connection);
+          ?>
+        </div>
+
+      </div>
     </section><!-- End Team Section -->
 
     <!-- ======= Testimonials Section ======= -->
@@ -405,8 +452,8 @@
       <div class="container">
         <div class="section-title">
           <span>Contact</span>
-          <h2>Contact</h2>
-          <p>Des information pour nous contacter</p>
+          <h3><span>Contact</span></h3>
+          <p class="mt-5">Des information pour nous contacter</p>
         </div>
       </div>
 
