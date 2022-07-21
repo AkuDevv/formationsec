@@ -110,27 +110,7 @@
               <div class="carousel-content">
                 <h2 class="animate__animated animate__fadeInDown">Formations d'<span>Ibtikarcom</span></h2>
                 <p class="animate__animated animate__fadeInUp">
-                  <?php
-                  $host = 'localhost';
-                  $username = 'root';
-                  $password = '';
-                  $dbname = 'formationsite';
-
-                  $connection = mysqli_connect($host, $username, $password, $dbname);
-                  if ($connection == false) {
-                    die('Erreur de connexion!');
-                  } else {
-                    $select = "SELECT * from Offres";
-                    $result = mysqli_query($connection, $select);
-                    if (mysqli_num_rows($result) > 0) {
-                      while ($row = mysqli_fetch_array($result)) {
-                        echo "$row[1]";
-                      }
-                    } else {
-                      echo "<p>Erreur!</p>";
-                    }
-                  }
-                  ?>
+                  Le mois de décembre laisse place à d’une nouvelle offre promotionnelle . Pour vous remercier de votre fidélité et de votre confiance, nous vous offrons une nouvelle offre professionnelle du mois de décembre : des formations professionnelles en infographie, montage et création d’entreprise seulement à 950 Dh/mois pour ( 3h/semaine durant 3 mois). Inscrivez-vous vite (les places sont limitées) cliquez sur réservez maintenant et remplissez le formulaire d’inscription.
                 </p>
                 <a href="#about" class="btn-get-started scrollto animate__animated animate__fadeInUp">Explorer</a>
               </div>
@@ -294,48 +274,56 @@
 
         <div class="row d-flex justify-content-center">
 
-          <?php
-          $host = 'localhost';
-          $username = 'root';
-          $password = '';
-          $dbname = 'formationsite';
 
-          $connection = mysqli_connect($host, $username, $password, $dbname);
-          if ($connection == false) {
-            die('Erreur de connection!');
-          } else {
-            $select = "SELECT * from formations where encours=1";
-            $result = mysqli_query($connection, $select);
-            if (mysqli_num_rows($result) > 0) {
-              $a = 0;
-              $_SESSION['count'] = $a;
-              while ($row = mysqli_fetch_array($result)) {
-                $a++;
-                echo "
-                <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
             <div class='member' data-aos='fade-up'>
               <div class='member-img'>
-                <img src='" . $row[2] . "' class='img-fluid' alt=''>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
                 <div class='social'>
-                  <a href='portfolio-details.php?form_id=" . $row[0] . "' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
                 </div>
               </div>
               <div class='member-info'>
-                <h3>" . $row[1] . "</h3>
+                <h3>Infographie</h3>
                 <span>
-                  " . substr($row[4], 0, 300) . "..." . "
+                  Que ce soit pour des besoins professionnels ou par simple envie, notre formation d’initiation en infographie assurée par Ibtikarcom vous permet de franchir une barrière créative. Vous êtes moins limité dans votre processus de création et pouvez, à votre guise, retoucher des images, crée...
                 </span>
               </div>
             </div>
           </div>
-                ";
-              }
-            } else {
-              echo "Pas de données!";
-            }
-          }
-          mysqli_close($connection);
-          ?>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>Montage</h3>
+                <span>
+                  Ibtikarcom vous informe qu’elle a lancé l’inscription pour bénéficier de cette formation en postproduction « montage » est conçue par des professionnels qui veulent partager leur savoir et leurs atouts. Si vous voulez améliorer votre niveau en montage la bonne décision c’est de nou...
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>Création d'entreprise</h3>
+                <span>
+                  Si vous êtes un futur entrepreneur et voulez vous créer votre propre entreprise cette formation en création d’entreprise c’est une opportunité pour vous afin de vous bien orienté et de vous bien former pour réaliser votre rêve . Les étudiants et étudiantes seront accompagnés tout au...
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -352,48 +340,55 @@
 
         <div class="row d-flex justify-content-center">
 
-          <?php
-          $host = 'localhost';
-          $username = 'root';
-          $password = '';
-          $dbname = 'formationsite';
-
-          $connection = mysqli_connect($host, $username, $password, $dbname);
-          if ($connection == false) {
-            die('Erreur de connection!');
-          } else {
-            $select = "SELECT * from formations where encours=0";
-            $result = mysqli_query($connection, $select);
-            if (mysqli_num_rows($result) > 0) {
-              $a = 0;
-              $_SESSION['count'] = $a;
-              while ($row = mysqli_fetch_array($result)) {
-                $a++;
-                echo "
-                <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
             <div class='member' data-aos='fade-up'>
               <div class='member-img'>
-                <img src='" . $row[2] . "' class='img-fluid' alt=''>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
                 <div class='social'>
-                  <a href='portfolio-details.php?form_id=" . $row[0] . "' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
                 </div>
               </div>
               <div class='member-info'>
-                <h3>" . $row[1] . "</h3>
+                <h3>Infographie</h3>
                 <span>
-                  " . substr($row[4], 0, 300) . "..." . "
+                  Que ce soit pour des besoins professionnels ou par simple envie, notre formation d’initiation en infographie assurée par Ibtikarcom vous permet de franchir une barrière créative. Vous êtes moins limité dans votre processus de création et pouvez, à votre guise, retoucher des images, crée...
                 </span>
               </div>
             </div>
           </div>
-                ";
-              }
-            } else {
-              echo "Pas de données!";
-            }
-          }
-          mysqli_close($connection);
-          ?>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>Montage</h3>
+                <span>
+                  Ibtikarcom vous informe qu’elle a lancé l’inscription pour bénéficier de cette formation en postproduction « montage » est conçue par des professionnels qui veulent partager leur savoir et leurs atouts. Si vous voulez améliorer votre niveau en montage la bonne décision c’est de nou...
+                </span>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-3 d-flex align-items-stretch'>
+            <div class='member' data-aos='fade-up'>
+              <div class='member-img'>
+                <img src='https://cdn.autonomous.ai/static/upload/images/new_post/what-are-the-best-work-from-home-graphic-design-jobs-for-2021-2351-1625579458352.jpg' class='img-fluid' alt=''>
+                <div class='social'>
+                  <a href='portfolio-details.html' title='Explorer'><i class='bi bi-bookmark-plus'></i></a>
+                </div>
+              </div>
+              <div class='member-info'>
+                <h3>Création d'entreprise</h3>
+                <span>
+                  Si vous êtes un futur entrepreneur et voulez vous créer votre propre entreprise cette formation en création d’entreprise c’est une opportunité pour vous afin de vous bien orienté et de vous bien former pour réaliser votre rêve . Les étudiants et étudiantes seront accompagnés tout au...
+                </span>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
@@ -409,37 +404,80 @@
 
         <div class="row portfolio-container">
 
-          <?php
-          $host = 'localhost';
-          $username = 'root';
-          $password = '';
-          $dbname = 'formationsite';
 
-          $connection = mysqli_connect($host, $username, $password, $dbname);
-          if ($connection == false) {
-            die('Erreur de connection!');
-          } else {
-            $select = "SELECT * from photos join formations on photos.id_formation = formations.id_formation";
-            $result = mysqli_query($connection, $select);
-            if (mysqli_num_rows($result) > 0) {
-              while ($row = mysqli_fetch_array($result)) {
-                echo "
-                  <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
             <div class='portfolio-wrap'>
-              <img src='assets/img/Gallery/" . $row[1] . "' class='img-fluid' alt=''>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
               <div class='portfolio-info'>
-                <h4>Formation: " . $row[4] . "</h4>
+                <h4>Formation: Infographie</h4>
               </div>
             </div>
           </div>
-                  ";
-              }
-            } else {
-              echo "Pas de données!";
-            }
-          }
-          mysqli_close($connection);
-          ?>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+          <div class='col-lg-4 col-md-6 portfolio-item filter-app'>
+            <div class='portfolio-wrap'>
+              <img src='assets/img/Gallery/1.jpg' class='img-fluid' alt=''>
+              <div class='portfolio-info'>
+                <h4>Formation: Infographie</h4>
+              </div>
+            </div>
+          </div>
+
         </div>
 
       </div>
